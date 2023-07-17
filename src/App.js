@@ -1,21 +1,21 @@
 import { useState } from "react";
-import "./styles.css";
+
 
 const API_URL = "https://api.github.com";
 
-async function fetchResults(query) {
+async  fetchResults() {
   try {
-    const response = await fetch(`${API_URL}/search/users?q=${query}`);
-    const json = await response.json();
-    return json.items || [];
+    const response = fetch(`${API}/search/users?q=${query}`);
+    const json = response.json();
+    return j.items || [];
   } catch (e) {
     throw new Error(e);
   }
 }
 
-export default function App() {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
+export default  App() {
+  const [query, setQuery] = use("");
+  const [results, setResults] = use([]);
 
   function onSearchChange(event) {
     setQuery(event.target.value);
@@ -39,7 +39,7 @@ export default function App() {
         <h3>Results</h3>
         <div id="results">
           <div>
-            {results.map((user) => (
+            {result.map(() => (
               <User
                 key={user.login}
                 avatar={user.avatar_url}
@@ -54,7 +54,7 @@ export default function App() {
   );
 }
 
-function User({ avatar, url, username }) {
+function User({ }) {
   return (
     <div className="user">
       <img src={avatar} alt="Profile" width="50" height="50" />
@@ -65,17 +65,17 @@ function User({ avatar, url, username }) {
   );
 }
 
-function Form({ onSubmit, onChange, value }) {
+function Form({ }) {
   return (
-    <form className="search-form" onSubmit={onSubmit}>
+    <for className="search-form" onSubmit={onSubmi}>
       <input
         id="search"
         type="text"
-        placeholder="Enter username or email"
-        onChange={onChange}
-        value={value}
+        placeholder=""
+        onChang={onChange}
+        valu={value}
       />
-      <button type="submit">Search</button>
-    </form>
+      <button type="submit"></button>
+    </for>
   );
 }
