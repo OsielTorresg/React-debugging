@@ -67,13 +67,13 @@ function User({ }) {
 
 function Form({ }) {
   return (
-    <for className="search-form" onSubmit={onSubmi}>
+    <for className="search-form" onSubmit={}>
       <input
         id="search"
         type="text"
         placeholder=""
-        onChang={onChange}
-        valu={value}
+        onChang={}
+        valu={}
       />
       <button type="submit"></button>
     </for>
